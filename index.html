@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sector-Wise Financial Indicators vs Stock Performance</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Sector-Wise Financial Indicators vs Stock Performance</h1>
+        <p>by Aanay Anandpara & Samy Alfandry</p>
+    </header>
+
+    <section id="introduction">
+        <h2>Project Introduction</h2>
+        <p>This project provides an in-depth analysis of financial indicators across different sectors and how they correlate with stock performance. By utilizing advanced data visualization techniques, we uncover hidden patterns and insights that inform strategic investment decisions.</p>
+        <p>Source: The dataset is hosted on Kaggle and consists of financial data for US stocks over five years, from 2014 to 2018.</p>
+        <p>Size and Content: The particular file we are focusing on is '2018_Financial_Data.csv'. The dataset includes a wide range of financial indicators, totaling over 200 different metrics. These metrics encompass various aspects of a company's financial health and performance, such as revenue growth, profit margins, operational efficiency, debt levels, and cash flow metrics. The dataset is comprehensive, covering a significant number of US-listed companies across various sectors. This allows for a detailed analysis of sector-specific trends and comparisons.</p>
+        <p>We will only be using these columns to analyze if there is a correlation between sector-wise financial indicators and stock performance:</p>
+        <ul>
+            <li>1. Sector</li>
+            <li>2. 2019 Price VAR</li>
+            <li>3. Revenue Growth</li>
+            <li>4. Gross profit margin</li>
+            <li>5. Operating income</li>
+            <li>6. EBITDA margin</li>
+            <li>7. Debt to Equity</li>
+            <li>8. ROE</li>
+            <li>9. R&D expense growth</li>
+            <li>10. Free Cash Flow</li>
+        </ul>
+    </section>
+
+    <section id="overall-data-viz">
+        <h2>Overall Data Visualization</h2>
+        <img src="median_revenue_growth_by_sector.png" alt="Median Revenue Growth by Sector" style="max-width:100%; height:auto;">
+        <p>This bar chart visualizes the median revenue growth across different sectors, offering insights into industry-specific performance. The visualization highlights sectors with the highest and lowest median growth, indicating potential trends and sectors of interest for stakeholders.</p>
+    </section>
+
+    <section id="static-visualizations">
+        <h2>Static Visualizations</h2>
+        
+        <!-- D3 Visualization - Median Revenue Growth by Sector -->
+        <div id="chart"></div>
+        <script src="script.js"></script>
+        <p>Description: The D3 bar chart represents median revenue growth by sector, rendered interactively in the browser.</p>
+        
+        <!-- Other Static Visualizations -->
+        <img src="median_debt_to_equity_ratio_by_sector.png" alt="Static Visualization 1" style="max-width:100%; height:auto;">
+        <p>Description: The chart displays the median Debt to Equity ratio for various industry sectors, visually represented through a heatmap and highlighting differences in financial leverage with a color gradient that enhances comparability and insight into sector-specific risk profiles.</p>
+        
+        <!-- Embedded HTML Visualization -->
+        <iframe src="staticviz.html" title="Static Visualization 3" width="100%" height="600px" style="border:none;"></iframe>
+        <p>Description: The bar chart demonstrates the operating income by sector, with each bar's height representing the total operating income for that sector. It provides a clear comparison of financial performance across various industries.</p>
+    </section>
+    
+    <section id="interactive-visualizations">
+        <h2>Interactive Visualizations</h2>
+        
+        <!-- Interactive Visualization 1 - Median Debt to Equity Chart -->
+        <iframe src="median_debt_to_equity_chart.html" title="Median Debt to Equity Chart" width="100%" height="600px" style="border:none;"></iframe>
+        <p>Description: The bar chart illustrates the median Debt to Equity ratio for a range of industry sectors, employing a color-coded system for ease of differentiation. The tooltip feature provides exact median values upon interaction, offering detailed financial structure insights per sector.</p>
+        
+        <!-- Interactive Visualization 2 - R&D Expense Growth vs Price Variation -->
+        <iframe src="interactive_scatter_rd_expense_vs_price_var.html" title="R&D Expense Growth vs Price Variation" width="100%" height="600px" style="border:none;"></iframe>
+        <p>Description: This interactive scatter plot contrasts R&D Expense Growth with 2019 Price Variation (%) across various sectors, each denoted by a unique color. Detailed financial metrics are accessible through tooltips upon hovering over each data point, and the plot offers a zoom function to closely examine specific areas of interest.</p>
+    </section>
+    
+    <section id="findings-summary">
+        <h2>Summary of Findings</h2>
+        <p>In this project, we have investigated the connection between sector-specific financial indicators and stock performance, revealing notable patterns and correlations through data visualization. Our findings indicate particular metrics, such as R&D investment and debt levels, have varying impacts on stock valuations across different industries. These insights lay the groundwork for future research, where advanced statistical methods and predictive modeling can be applied to enhance investment strategies and inform economic policy decisions. Moving forward, we aim to integrate more complex algorithms and expansive datasets to refine our understanding of the financial market's multifaceted nature. Our visualizations can also be updated with new stock data and investors can use it to be more informative when making investment decisions.</p>
+    </section>
+
+</body>
+
+<footer>
+    <h2>References</h2>
+    <ul>
+        <li>
+            <a href="https://www.kaggle.com/datasets/cnic92/200-financial-indicators-of-us-stocks-20142018/data?select=2018_Financial_Data.csv" target="_blank">Dataset Source: 200 Financial Indicators of US stocks (2014-2018)</a>
+        </li>
+        <li>
+            <a href="https://www.investopedia.com/terms/f/financialperformance.asp" target="_blank">Understanding Financial Indicators</a>
+        </li>
+    </ul>
+</footer>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-03968aaa6d3125f41bb3ccb97c5e18fe"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Sector", "type": "nominal"}, "x": {"field": "Sector", "sort": "-y", "type": "nominal"}, "y": {"field": "Operating Income", "type": "quantitative"}}, "height": 400, "title": "Operating Income by Sector", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json", "datasets": {"data-03968aaa6d3125f41bb3ccb97c5e18fe": [{"Sector": "Basic Materials", "Operating Income": 154228353529.2}, {"Sector": "Communication Services", "Operating Income": 85033597208.82}, {"Sector": "Consumer Cyclical", "Operating Income": 256457972352.276}, {"Sector": "Consumer Defensive", "Operating Income": 134502895560.214}, {"Sector": "Energy", "Operating Income": 275900648575.992}, {"Sector": "Financial Services", "Operating Income": 419008445704.72}, {"Sector": "Healthcare", "Operating Income": 157079505651.316}, {"Sector": "Industrials", "Operating Income": 218047228582.6}, {"Sector": "Real Estate", "Operating Income": 49495007729.0}, {"Sector": "Technology", "Operating Income": 400015122202.121}, {"Sector": "Utilities", "Operating Income": 68133566744.05}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

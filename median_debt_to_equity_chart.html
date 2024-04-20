@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-c544c6a6e090ad9bd6f873742e310809"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Sector", "type": "nominal"}, "tooltip": [{"field": "Sector", "title": "Sector", "type": "nominal"}, {"field": "Debt to Equity", "title": "Median Debt to Equity", "type": "quantitative"}], "x": {"field": "Sector", "sort": "-y", "type": "nominal"}, "y": {"axis": {"title": "Median Debt to Equity"}, "field": "Debt to Equity", "type": "quantitative"}}, "height": 400, "title": "Median Debt to Equity Ratio by Sector", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-c544c6a6e090ad9bd6f873742e310809": [{"Sector": "Basic Materials", "Debt to Equity": 0.60365}, {"Sector": "Communication Services", "Debt to Equity": 0.9237500000000001}, {"Sector": "Consumer Cyclical", "Debt to Equity": 0.6031}, {"Sector": "Consumer Defensive", "Debt to Equity": 0.38805}, {"Sector": "Energy", "Debt to Equity": 0.6534}, {"Sector": "Financial Services", "Debt to Equity": 0.61575}, {"Sector": "Healthcare", "Debt to Equity": 0.1717}, {"Sector": "Industrials", "Debt to Equity": 0.6533}, {"Sector": "Real Estate", "Debt to Equity": 0.9895499999999999}, {"Sector": "Technology", "Debt to Equity": 0.23875}, {"Sector": "Utilities", "Debt to Equity": 1.2535}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
